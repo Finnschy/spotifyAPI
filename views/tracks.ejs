@@ -1,0 +1,19 @@
+<%- include("./partials/nav") %>
+
+<h1>Tracks on Album</h1>
+
+<% albumTracks.forEach(track => { %>
+    
+    <h2>
+        <%= track.name %>
+    </h2>
+    <a href=<%= track.external_urls.spotify %>>Link to song</a>
+    <audio controls>
+        <source src=<%=track.preview_url %>>
+      </audio>
+    <p>
+        <%= track.preview_url === null ? "Song preview not available" : "" %>
+    </p>
+<%})%>
+
+<%- include("./partials/footer") %>

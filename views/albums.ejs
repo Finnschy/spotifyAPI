@@ -1,0 +1,19 @@
+<%- include("./partials/nav") %>
+
+<h1>Album overview</h1>
+
+<% albumResults.forEach(album => { %>
+    <h2>
+        <%= album.name %>
+    </h2>
+    <h3>
+        <%= album.artists[0].name %>
+    </h3>
+    <img src= <%= album.images != '' ? album.images[0].url : 'assets/img/noimg.png' %> alt="">
+    <a href="/tracks/<%= album.id %>">Show Tracks</a>
+
+    
+    
+<%})%>
+
+<%- include("./partials/footer") %>
